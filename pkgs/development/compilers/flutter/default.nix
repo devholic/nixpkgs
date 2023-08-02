@@ -69,8 +69,8 @@ let
       };
     });
 
-  flutter3Patches = getPatches ./patches/flutter3
-    ++ lib.optional stdenv.hostPlatform.isDarwin getPatches ./patches/flutter3-darwin;
+  flutter3Patches = (getPatches ./patches/flutter3)
+    ++ lib.optional stdenv.hostPlatform.isDarwin (getPatches ./patches/flutter3-darwin);
 in
 {
   inherit wrapFlutter;
