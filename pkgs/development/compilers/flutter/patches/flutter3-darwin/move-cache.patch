@@ -7,7 +7,7 @@ index 01d0bf4e21..1cb88e8ac9 100644
    # This podhelper script is at $FLUTTER_ROOT/packages/flutter_tools/bin.
    # Add search paths from $FLUTTER_ROOT/bin/cache/artifacts/engine.
 -  artifacts_dir = File.join('..', '..', '..', '..', 'bin', 'cache', 'artifacts', 'engine')
-+  artifacts_dir = File.join(ENV['FLUTTER_CACHE_DIR'], 'bin', 'cache', 'artifacts', 'engine')
++  artifacts_dir = File.join(ENV['HOME'], '.cache', 'flutter', 'artifacts', 'engine')
    debug_framework_dir = File.expand_path(File.join(artifacts_dir, 'ios', 'Flutter.xcframework'), __FILE__)
 
    unless Dir.exist?(debug_framework_dir)
@@ -16,6 +16,6 @@ index 01d0bf4e21..1cb88e8ac9 100644
    # This podhelper script is at $FLUTTER_ROOT/packages/flutter_tools/bin.
    # Add search paths from $FLUTTER_ROOT/bin/cache/artifacts/engine.
 -  artifacts_dir = File.join('..', '..', '..', '..', 'bin', 'cache', 'artifacts', 'engine')
-+  artifacts_dir = File.join(ENV['FLUTTER_CACHE_DIR'], 'bin', 'cache', 'artifacts', 'engine')
++  artifacts_dir = File.join(ENV['HOME'], '.cache', 'flutter', 'artifacts', 'engine')
    debug_framework_dir = File.expand_path(File.join(artifacts_dir, 'darwin-x64'), __FILE__)
    release_framework_dir = File.expand_path(File.join(artifacts_dir, 'darwin-x64-release'), __FILE__)
