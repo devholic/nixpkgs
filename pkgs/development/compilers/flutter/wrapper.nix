@@ -64,7 +64,7 @@ let
     '';
   mkPlatformArtifactLinkCommand = { artifact, os, architecture, variant ? null }:
     let
-      artifactDirectory = "${os}-${architecture}${lib.optionalString (variant != null) "-${variant}"}";
+      artifactDirectory = "${os}${lib.optionalString (architecture != null && architecture != "") "-${architecture}"}${lib.optionalString (variant != null) "-${variant}"}";
     in
     ''
       mkdir -p $out/artifacts/engine/${artifactDirectory}
