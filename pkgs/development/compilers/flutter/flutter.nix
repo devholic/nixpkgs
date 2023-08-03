@@ -18,7 +18,8 @@ let
 
       outputs = [ "out" "cache" ];
 
-      buildInputs = [ git ];
+      buildInputs = [ git ]
+        ++ lib.optionals stdenv.hostPlatform.isDarwin [ darwin.apple_sdk.frameworks.Cocoa ];
       nativeBuildInputs = [ ]
         ++ lib.optionals stdenv.hostPlatform.isDarwin [ darwin.DarwinTools ];
 
